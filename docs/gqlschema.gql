@@ -1,0 +1,149 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AuthModelResolver {
+  """Session token"""
+  access_token: String!
+
+  """Id of the user"""
+  id: String!
+
+  """Code of the user"""
+  code: String!
+  name_first: String!
+  name_last: String!
+  description: String!
+  mail: String!
+  role: String!
+}
+
+type UserModelResolver {
+  id: String
+  code: String
+  name_first: String
+  name_last: String
+  description: String
+  mail: String
+  role: String
+}
+
+type HelloModelResolver {
+  message: String
+}
+
+type SystemInfoResolverModel {
+  version: String!
+}
+
+type PasskeyResolverModel {
+  id: String!
+  label: String!
+  user_id: String!
+  hostname: String!
+  user_code: String!
+  challenge: String!
+  credential_id: String!
+}
+
+type SetModelResolver {
+  rep: Float
+  series: [String!]
+  duration: Float
+  rest: Float
+  pause: Float
+  sets: [SetModelResolver!]
+}
+
+type WorkoutModelResolver {
+  label: String!
+  sets: [SetModelResolver!]!
+}
+
+type TrainingModelResolver {
+  id: String!
+  label: String!
+  workout: [WorkoutModelResolver!]!
+}
+
+type Query {
+  users: [UserModelResolver!]!
+  user(dto: GetUserResolverDto!): UserModelResolver!
+  auth(dto: AuthAuthResolverDto!): AuthModelResolver!
+  auth_passkey(dto: PasskeyAuthResolverDto!): AuthModelResolver!
+  getSessionInfo: AuthModelResolver!
+  hello: HelloModelResolver!
+  systemInfo: SystemInfoResolverModel!
+  passkeys_for_user: [PasskeyResolverModel!]!
+  trainings: [TrainingModelResolver!]!
+}
+
+input GetUserResolverDto {
+  id: String
+  code: String
+}
+
+input AuthAuthResolverDto {
+  """User code for the session"""
+  login: String!
+
+  """Password for the session"""
+  password: String!
+}
+
+input PasskeyAuthResolverDto {
+  user_code: String!
+  credentialId: String!
+  authenticatorData: String!
+  clientData: String!
+  signature: String!
+  userHandle: String!
+}
+
+type Mutation {
+  create_user(dto: CreateUserResolverDto!): UserModelResolver!
+  update_password(dto: UpdPasswordAuthResolverDto!): AuthModelResolver!
+  create_passkey(dto: CreatePasskeyResolverDto!): PasskeyResolverModel!
+  delete_passkey(dto: DeletePasskeyResolverDto!): Boolean!
+}
+
+input CreateUserResolverDto {
+  """Code of the user"""
+  code: String!
+  name_first: String!
+  name_last: String!
+  description: String!
+  mail: String!
+  password: String!
+}
+
+input UpdPasswordAuthResolverDto {
+  old_value: String!
+  new_value: String!
+  conf_value: String!
+}
+
+input CreatePasskeyResolverDto {
+  label: String!
+  hostname: String!
+  challenge: String!
+  registration: CreatePasskeyRegistrationResolverDto!
+}
+
+input CreatePasskeyRegistrationResolverDto {
+  username: String!
+  credential: CreatePasskeyRegistrationCredentialResolverDto!
+  authenticatorData: String!
+  clientData: String!
+  attestationData: String!
+}
+
+input CreatePasskeyRegistrationCredentialResolverDto {
+  id: String!
+  publicKey: String!
+  algorithm: String!
+}
+
+input DeletePasskeyResolverDto {
+  passkey_id: String!
+}

@@ -1,0 +1,36 @@
+###
+POST {{host}}/graphql
+Content-Type: application/json
+Authorization: Bearer {{token}}
+X-REQUEST-TYPE: GraphQL
+
+query trainings {
+  trainings {
+    id
+    label
+    workout {
+      label
+      sets {
+        rep
+        series
+        duration
+        rest
+        pause
+        sets {
+          rep
+          series
+          duration
+          rest
+          pause
+          sets {
+            rep
+            series
+            duration
+            rest
+            pause
+          }
+        }
+      }
+    }
+  }
+}

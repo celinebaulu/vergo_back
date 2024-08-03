@@ -1,0 +1,13 @@
+## Fichier : docker-compose.yml
+version: '3.8'
+
+services:
+  vergo_back:
+    build:
+      dockerfile: Dockerfile
+    container_name: vergo_back
+    ports:
+      - '3002:3000'
+    restart: always
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
