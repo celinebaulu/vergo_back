@@ -24,6 +24,7 @@ import { PasswordLessService } from '@service/passwordless/passwordless.service'
 import { GetByUserIdPasskeyUsecase } from '@usecase/passkey/getByUserId.passkey.usecase';
 import { PasswordLessServiceFake } from '@service/passwordless/passwordless.service.fake';
 import { PasswordLessServiceReal } from '@service/passwordless/passwordlless.service.real';
+import { ImageService } from '@src/service/image/image.service';
 
 export class Inversify {
   mongo: Db;
@@ -31,6 +32,7 @@ export class Inversify {
   bddService: BddService;
   authUsecase: AuthUsecase;
   cryptService: CryptService;
+  imageService: ImageService;
   encodeService: EncodeService;
   getUserUsecase: GetUserUsecase;
   passwordService: PasswordService;
@@ -51,6 +53,7 @@ export class Inversify {
     this.cryptService = new CryptServiceReal();
     this.encodeService = new EncodeServiceReal();
     this.passwordService = new PasswordServiceReal();
+    this.imageService = new ImageService();
     if (config.env.mode === 'prod') {
       this.loggerService = logger;
       this.bddService = new BddServiceMongo() as BddService;

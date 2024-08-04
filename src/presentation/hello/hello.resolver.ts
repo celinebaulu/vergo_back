@@ -1,7 +1,7 @@
 import { UseGuards } from '@nestjs/common';
 import { Query, Resolver } from '@nestjs/graphql';
 
-import { GqlAuthGuard } from '@presentation/guard/auth.guard';
+import { GqlAuthGuard } from '@presentation/guard/gql.auth.guard';
 import { HelloModelResolver } from '@presentation/hello/model/hello.resolver.model';
 
 /* eslint-disable @typescript-eslint/no-unused-vars */

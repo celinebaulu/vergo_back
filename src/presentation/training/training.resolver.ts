@@ -8,8 +8,8 @@ import { Inversify } from '@src/inversify/investify';
 import { USER_ROLE } from '@presentation/guard/userRole';
 import { Roles } from '@presentation/guard/roles.decorator';
 import { RolesGuard } from '@presentation/guard/roles.guard';
-import { GqlAuthGuard } from '@presentation/guard/auth.guard';
 import { UserSession } from '@presentation/auth/jwt.strategy';
+import { GqlAuthGuard } from '@presentation/guard/gql.auth.guard';
 import { CurrentSession } from '@presentation/guard/userSession.decorator';
 import { TrainingModelResolver } from '@presentation/training/model/training.resolver.model';
 

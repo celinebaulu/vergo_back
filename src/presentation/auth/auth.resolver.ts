@@ -3,14 +3,14 @@ import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { Inject, UnauthorizedException, UseGuards } from '@nestjs/common';
 
 import { Inversify } from '@src/inversify/investify';
-import { GqlAuthGuard } from '@presentation/guard/auth.guard';
 import { UserSession } from '@presentation/auth/jwt.strategy';
+import { GqlAuthGuard } from '@presentation/guard/gql.auth.guard';
 import { CurrentSession } from '@presentation/guard/userSession.decorator';
 import { AuthModelResolver } from '@presentation/auth/model/auth.resolver.model';
 import { AuthAuthResolverDto } from '@presentation/auth/dto/auth.auth.resolver.dto';
 import { UserSessionUsecaseModel } from '@usecase/user/model/userSession.usecase.model';
+import { PasskeyAuthResolverDto } from '@presentation/auth/dto/passkey.auth.resolver.dto';
 import { UpdPasswordAuthResolverDto } from '@presentation/auth/dto/updPassword.auth.resolver.dto';
-import { PasskeyAuthResolverDto } from './dto/passkey.auth.resolver.dto';
 
 @Resolver('AuthResolver')
 export class AuthResolver {
