@@ -6,7 +6,7 @@
       "slug": "warm-up",
       "sets": [
         {
-          "slugs": ["jumping_jacks"],
+          "slugs": ["man_jumping_jacks"],
           "rep": 1,
           "duration": 40,
           "rest": 20

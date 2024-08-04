@@ -13,6 +13,7 @@ import { HelloModule } from '@presentation/hello/hello.module';
 import { SystemModule } from '@presentation/system/system.module';
 import { PasskeyModule } from '@presentation/passkey/passkey.module';
 import { TrainingModule } from '@presentation/training/training.module';
+import { ExerciceModule } from '@presentation/exercice/exercice.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { TrainingModule } from '@presentation/training/training.module';
     ImageModule,
     SystemModule,
     PasskeyModule,
+    ExerciceModule,
     TrainingModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,

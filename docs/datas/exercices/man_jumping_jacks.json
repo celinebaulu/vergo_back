@@ -1,0 +1,17 @@
+{
+  "_id": ObjectId(),
+  "slug": "man_jumping_jacks",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Jumping Jacks"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Debout, sautez en écartant les jambes et en levant les bras au-dessus de la tête, puis revenez à la position de départ."
+    }
+  ],
+  "image": "man-doing-jumping-jacks-star.png"
+}

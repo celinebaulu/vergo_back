@@ -66,6 +66,19 @@ type TrainingModelResolver {
   workout: [WorkoutModelResolver!]!
 }
 
+type LanguageModelResolver {
+  lang: String!
+  value: String!
+}
+
+type ExerciceModelResolver {
+  id: String!
+  slug: String!
+  title: [LanguageModelResolver!]!
+  description: [LanguageModelResolver!]!
+  image: String!
+}
+
 type Query {
   users: [UserModelResolver!]!
   user(dto: GetUserResolverDto!): UserModelResolver!
@@ -75,6 +88,7 @@ type Query {
   hello: HelloModelResolver!
   systemInfo: SystemInfoResolverModel!
   passkeys_for_user: [PasskeyResolverModel!]!
+  exercices: [ExerciceModelResolver!]!
   trainings: [TrainingModelResolver!]!
 }
 
