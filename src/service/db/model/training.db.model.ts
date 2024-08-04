@@ -1,17 +1,17 @@
 export interface TrainingDbModel {
   id: string;
-  label: string;
+  slug: string;
   workout: WorkoutDbModel[];
 }
 
 export interface WorkoutDbModel {
-  label: string;
+  slug: string;
   sets: SetDbModel[];
 }
 
 export interface SetDbModel {
   rep?: number;
-  series?: string[];
+  slugs?: string[];
   duration?: number;
   rest?: number;
   pause?: number;

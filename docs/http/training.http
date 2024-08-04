@@ -7,24 +7,24 @@ X-REQUEST-TYPE: GraphQL
 query trainings {
   trainings {
     id
-    label
+    slug
     workout {
-      label
+      slug
       sets {
         rep
-        series
+        slugs
         duration
         rest
         pause
         sets {
           rep
-          series
+          slugs
           duration
           rest
           pause
           sets {
             rep
-            series
+            slugs
             duration
             rest
             pause

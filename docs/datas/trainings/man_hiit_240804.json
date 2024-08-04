@@ -1,7 +1,5 @@
-import { TrainingDbModel } from "../../model/training.db.model";
-
-export const hiit: TrainingDbModel = {
-  id: '65d4d015261e894a1da31a65',
+{
+  "_id": ObjectId(),
   "slug": "man_hiit_240804",
   "workout": [
     {
@@ -72,4 +70,4 @@ export const hiit: TrainingDbModel = {
       ]
     }
   ]
-};
+}

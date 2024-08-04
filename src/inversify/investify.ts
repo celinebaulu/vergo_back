@@ -58,7 +58,8 @@ export class Inversify {
       this.passwordLessService = new PasswordLessServiceReal();
     } else if (config.env.mode === 'dev') {
       this.loggerService = new LoggerServiceFake();
-      this.bddService = new BddServiceFake() as BddService;
+      this.bddService = new BddServiceMongo() as BddService;
+      this.bddService.initConnection();
       this.passwordLessService = new PasswordLessServiceReal();
     } else {
       this.loggerService = new LoggerServiceFake();

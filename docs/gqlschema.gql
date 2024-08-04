@@ -48,7 +48,7 @@ type PasskeyResolverModel {
 
 type SetModelResolver {
   rep: Float
-  series: [String!]
+  slugs: [String!]
   duration: Float
   rest: Float
   pause: Float
@@ -56,13 +56,13 @@ type SetModelResolver {
 }
 
 type WorkoutModelResolver {
-  label: String!
+  slug: String!
   sets: [SetModelResolver!]!
 }
 
 type TrainingModelResolver {
   id: String!
-  label: String!
+  slug: String!
   workout: [WorkoutModelResolver!]!
 }
 

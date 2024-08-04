@@ -21,7 +21,7 @@ install:
 	docker rm vergo_back
 	docker image rm vergo_back
 	docker load -i vergo_back.tar
-	docker run -d --name vergo_back -p 3003:3000 --restart always --add-host host.docker.internal:host-gateway vergo_back
+	docker compose -f docker-compose.prod.yml up -d
 
 help:
 	@echo ""

@@ -5,7 +5,7 @@ export class SetModelResolver {
   @Field(() => Number, { nullable: true })
   rep?: number;
   @Field(() => [String], { nullable: true })
-  series?: string[];
+  slugs?: string[];
   @Field(() => Number, { nullable: true })
   duration?: number;
   @Field(() => Number, { nullable: true })
@@ -19,7 +19,7 @@ export class SetModelResolver {
 @ObjectType()
 export class WorkoutModelResolver {
   @Field(() => String)
-  label: string;
+  slug: string;
   @Field(() => [SetModelResolver])
   sets: SetModelResolver[];
 }
@@ -29,7 +29,7 @@ export class TrainingModelResolver {
   @Field(() => String)
   id: string;
   @Field(() => String)
-  label: string;
+  slug: string;
   @Field(() => [WorkoutModelResolver])
   workout: WorkoutModelResolver[];
 }
