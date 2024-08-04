@@ -60,3 +60,5 @@ src/config/prod.ts
 *.temp.json
 /test.http
 .vscode/settings.json
+vergo_back.tar
+account.md

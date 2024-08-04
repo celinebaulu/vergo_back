@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 
 import inversify from '@src/inversify/investify';
-import { TrainingResolver } from '@presentation/Training/Training.resolver';
+import { TrainingResolver } from '@presentation/training/training.resolver';
 
 @Module({
   imports: [],

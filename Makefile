@@ -10,6 +10,19 @@ down:
 reset: down
 	docker rm vergo_back
 
+# Build the Docker image and save it as a tarball
+tar: 
+	docker build -t vergo_back -f Dockerfile .
+	docker save vergo_back -o vergo_back.tar
+
+# Install the Docker image by loading it from a tarball and running it
+install:
+	docker stop vergo_back
+	docker rm vergo_back
+	docker image rm vergo_back
+	docker load -i vergo_back.tar
+	docker run -d --name vergo_back -p 3003:3000 --restart always --add-host host.docker.internal:host-gateway vergo_back
+
 help:
 	@echo ""
 	@echo "~~ Vergo Apis Makefile ~~"
